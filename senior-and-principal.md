@@ -12,13 +12,14 @@ When you’ve finished please make it available on something like GitHub and ema
 
 Use the fake endpoints provided to create a list of absences.
 
-List absences, including visual cue which highlights if there are any conflicts.
-Allow the list to be sorted by date, absence type, and name.
-Provide a free text search to filter
-Clicking on an employees name will list all their absences
+* List absences, including visual cue which highlights if there are any conflicts.
+* Allow the list to be sorted by date, absence type, and name.
+* Provide a free text search to filter
+* Clicking on an employees name will list all their absences
 
 # The endpoints
 
 `/api/absences` will return a full list of all absences.
+
 `/api/conflict/{id}` for a given absence id will indicate if there are conflicts or not.
 
