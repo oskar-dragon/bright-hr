@@ -1,4 +1,5 @@
-# BrightHR Interview Task
+# Front-end task for Junior and Middleweight roles
+
 Firstly, thanks for applying to work with us at BrightHR.
 We ask all potential candidates to complete a small task before the interview. This will form the basis of the technical part of the interview; thus avoiding the dreaded live interview kata! 
 
