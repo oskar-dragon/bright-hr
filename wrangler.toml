@@ -1,3 +1,4 @@
-name = "senior-kata"
+name = "front-end-kata"
 main = "src/index.js"
 compatibility_date = "2023-02-24"
+workers_dev = true
