@@ -26,7 +26,7 @@ Use the fake endpoints provided to create a list of absences.
 
 # The endpoints
 
-`/api/absences` will return a full list of all absences.
+`https://front-end-kata.brighthr.workers.dev/api/absences` will return a full list of all absences.
 
-`/api/conflict/{id}` for a given absence id will indicate if there are conflicts or not.
+`https://front-end-kata.brighthr.workers.dev/api/conflict/{id}` for a given absence id will indicate if there are conflicts or not.
 
