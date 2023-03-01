@@ -152,8 +152,15 @@ const absences = Array(5000)
 
 const Absences = ({ query: { amount = 20 } }) => {
   const body = JSON.stringify(absences.slice(0, amount));
-  const headers = { "Content-type": "application/json" };
-  return new Response(body, { headers });
+
+  return new Response(body, {
+    headers: {
+      "Content-type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+      "Access-Control-Max-Age": "86400",
+    },
+  });
 };
 
 export default Absences;
