@@ -3,7 +3,7 @@
 Firstly, thanks for applying to work with us at BrightHR.
 We ask all potential candidates to complete a small task before the interview. This will form the basis of the technical part of the interview; thus avoiding the dreaded live interview kata! 
 
-We appreciate your time is precious so please don’t spend much more than an hour on it. Don’t worry; there are no right or wrong answers and you don’t have to ‘complete’ the task. Other than a strong hint we’d like to see some TDD we’ll let you decide on what you want to focus on or show off.
+We appreciate your time is precious so please don’t spend much more than an hour on it. Don’t worry; there are no right or wrong answers and you don’t have to ‘complete’ the task. Other than providing some form of testing for your code we’ll let you decide on what you want to focus on or show off.
 
 When you’ve finished please make it available on something like GitHub and email a link back to us.
 
