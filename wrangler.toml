@@ -1,4 +1,4 @@
-name = "front-end-kata"
-main = "src/index.js"
-compatibility_date = "2023-02-24"
-workers_dev = true
+compatibility_date = "2024-01-01"
+main               = "src/index.js"
+name               = "front-end-kata"
+usage_model        = "unbound"
