@@ -8,7 +8,7 @@ export default defineConfig({
 		restoreMocks: true,
 		setupFiles: ['./src/testing/setup/setupTestEnv.ts'],
 		coverage: {
-			include: ['src/**/utils/*.{ts,tsx}'],
+			include: ['src/**/utils/*.{ts,tsx}', 'src/**/helpers/*.{ts,tsx}'],
 			exclude: ['src/**/*.test.{ts,tsx}', 'src/components', 'src/utils/tv.ts', 'src/**/index.ts'],
 			all: true,
 		},
