@@ -34,7 +34,7 @@ const DocumentViewer = ({ documents }: DocumentViewerProps) => {
 							/>
 						))
 					) : (
-						<span>No files and folders</span>
+						<span>No files or folders</span>
 					)}
 				</div>
 			</div>
