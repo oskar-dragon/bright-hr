@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import type { DocumentTypeOrFolder } from '../types';
-import DocumentItem from './documentItem';
 import { isFolder } from '../helpers/isFolder';
 
 type DocumentViewerProps = {
@@ -42,7 +41,6 @@ const DocumentViewer = ({ documents }: DocumentViewerProps) => {
 		</div>
 	);
 };
-
 
 type DocumentItemProps = {
 	item: DocumentTypeOrFolder;
@@ -89,4 +87,4 @@ const DocumentItem = ({ item, isOpen, onToggleFolder }: DocumentItemProps) => {
 	);
 };
 
-export default DocumentViewer
+export default DocumentViewer;
