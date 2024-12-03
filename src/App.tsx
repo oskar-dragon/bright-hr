@@ -1,9 +1,5 @@
 function App() {
-	return (
-		<>
-			<div className="bg-red-200">React</div>
-		</>
-	);
+	return <main className="flex flex-col min-h-dvh">React</main>;
 }
 
 export default App;
