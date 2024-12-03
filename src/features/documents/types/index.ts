@@ -14,7 +14,3 @@ export type Folder = {
 };
 
 export type DocumentTypeOrFolder = DocumentItem | Folder;
-
-export const isFolder = (item: DocumentTypeOrFolder): item is Folder => {
-	return item.type === 'folder';
-};

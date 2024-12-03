@@ -1,4 +1,4 @@
-import type { DocumentTypeOrFolder } from '../types/documents';
+import type { DocumentTypeOrFolder } from '../types';
 
 export const documents: DocumentTypeOrFolder[] = [
 	{
