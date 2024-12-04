@@ -28,10 +28,8 @@ const searchRecursively = (items: DocumentTypeOrFolder[], searchTerm: string): D
 			if (matchingFiles.length > 0) {
 				result.push({ ...item, files: matchingFiles });
 			}
-		}
-
-		if (item.name.toLowerCase().includes(searchTerm)) {
-			return result.push(item);
+		} else if (item.name.toLowerCase().includes(searchTerm)) {
+			result.push(item);
 		}
 	});
 

@@ -48,6 +48,23 @@ export const documents: DocumentTypeOrFolder[] = [
 				name: 'Welcome to the company!',
 				added: '2015-04-24',
 			},
+			{
+				type: 'folder',
+				name: 'Onboarding',
+				added: '2017-05-02',
+				files: [
+					{
+						type: 'doc',
+						name: 'Holidays',
+						added: '2017-05-02',
+					},
+					{
+						type: 'doc',
+						name: 'Sick Leave policy',
+						added: '2017-05-03',
+					},
+				],
+			},
 		],
 	},
 ];

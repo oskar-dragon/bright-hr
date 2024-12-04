@@ -1,4 +1,4 @@
-import { act, render, renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
 import { documents } from '../../constants/mockData';
 import { DocumentTypeOrFolder } from '../../types';
