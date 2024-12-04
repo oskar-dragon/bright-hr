@@ -7,7 +7,6 @@ type UseDocumentSearchReturn = {
 	searchTerm: string;
 	setSearchTerm: (term: string) => void;
 	result: DocumentTypeOrFolder[];
-	defaultSearchTerm?: string;
 };
 
 type UseDocumentSearchProps = {
