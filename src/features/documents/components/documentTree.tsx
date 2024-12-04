@@ -8,31 +8,12 @@ type DocumentTreeProps = {
 };
 
 const DocumentTree = ({ documents }: DocumentTreeProps) => {
-	const [openFolders, setOpenFolders] = useState<Set<string>>(new Set());
-
-	const toggleFolder = (name: string) => {
-		const newOpenFolders = new Set(openFolders);
-		if (newOpenFolders.has(name)) {
-			newOpenFolders.delete(name);
-		} else {
-			newOpenFolders.add(name);
-		}
-		setOpenFolders(newOpenFolders);
-	};
-
 	return (
 		<div className="space-y-6">
 			<div className="rounded-lg bg-white p-6 shadow-lg">
 				<div className="space-y-2">
 					{documents.length > 0 ? (
-						documents.map((item) => (
-							<DocumentItem
-								key={item.name}
-								item={item}
-								isOpen={openFolders.has(item.name)}
-								onToggleFolder={toggleFolder}
-							/>
-						))
+						documents.map((item) => <DocumentItem key={item.name} item={item} />)
 					) : (
 						<span>No files or folders</span>
 					)}
@@ -44,8 +25,7 @@ const DocumentTree = ({ documents }: DocumentTreeProps) => {
 
 type DocumentItemProps = {
 	item: DocumentTypeOrFolder;
-	isOpen: boolean;
-	onToggleFolder: (name: string) => void;
+	isOpen?: boolean;
 };
 
 const FileIcon = ({ type }: { type: string }) => {
@@ -64,11 +44,11 @@ const FileIcon = ({ type }: { type: string }) => {
 	);
 };
 
-const DocumentItem = ({ item, isOpen, onToggleFolder }: DocumentItemProps) => {
+const DocumentItem = ({ item }: DocumentItemProps) => {
+	const [isFolderOpen, setFolderOpen] = useState<boolean>();
+
 	const handleClick = () => {
-		if (isFolder(item)) {
-			onToggleFolder(item.name);
-		}
+		setFolderOpen((prev) => !prev);
 	};
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -84,7 +64,7 @@ const DocumentItem = ({ item, isOpen, onToggleFolder }: DocumentItemProps) => {
 				onKeyDown={handleKeyDown}
 				role={isFolder(item) ? 'button' : 'listitem'}
 				tabIndex={0}
-				aria-expanded={isFolder(item) ? isOpen : undefined}
+				aria-expanded={isFolder(item) ? isFolderOpen : undefined}
 				className={`flex items-center p-2 rounded ${
 					isFolder(item) ? 'hover:bg-blue-50 cursor-pointer' : 'hover:bg-gray-50'
 				}`}
@@ -95,13 +75,15 @@ const DocumentItem = ({ item, isOpen, onToggleFolder }: DocumentItemProps) => {
 					{!isFolder(item) && <span className="ml-2 text-xs text-gray-500 uppercase">{item.type}</span>}
 				</div>
 				<span className="text-sm text-gray-500">{new Date(item.added).toLocaleDateString()}</span>
-				{isFolder(item) && <span className="ml-2 text-xs text-blue-600">(Click to {isOpen ? 'close' : 'open'})</span>}
+				{isFolder(item) && (
+					<span className="ml-2 text-xs text-blue-600">(Click to {isFolderOpen ? 'close' : 'open'})</span>
+				)}
 			</div>
 
-			{isFolder(item) && isOpen && item.files && (
+			{isFolder(item) && isFolderOpen && (
 				<div className="ml-8 border-l-2 border-gray-200">
 					{item.files.map((file) => (
-						<DocumentItem key={file.name} item={file} isOpen={false} onToggleFolder={onToggleFolder} />
+						<DocumentItem key={file.name} item={file} />
 					))}
 				</div>
 			)}

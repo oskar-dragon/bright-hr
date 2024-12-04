@@ -1,7 +1,7 @@
-import DocumentSearchInput from './features/documents/components/documentSearchInput';
-import DocumentTree from './features/documents/components/documentTree';
-import { documents } from './features/documents/constants/mockData';
-import { useDocumentSearch } from './features/documents/hooks/useDocumentSearch';
+import DocumentSearchInput from '../features/documents/components/documentSearchInput';
+import DocumentTree from '../features/documents/components/documentTree';
+import { documents } from '../features/documents/constants/mockData';
+import { useDocumentSearch } from '../features/documents/hooks/useDocumentSearch';
 
 function App() {
 	const { searchTerm, setSearchTerm, result } = useDocumentSearch({ documents });

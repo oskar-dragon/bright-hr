@@ -10,7 +10,7 @@ export type Folder = {
 	type: 'folder';
 	name: string;
 	added: string;
-	files: DocumentItem[];
+	files: DocumentTypeOrFolder[];
 };
 
 export type DocumentTypeOrFolder = DocumentItem | Folder;
