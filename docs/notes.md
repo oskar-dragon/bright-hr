@@ -18,3 +18,6 @@ Before starting the search implementation, I developed a simple [`Select`](../sr
 2. Store the state of the currently selected sort option.
 3. Expose a function to update the selected sort option.
 4. Inside of a hook, I would have a function that recursively sorts the files and folders based on the selected criteria. This would allow to sort folders and files at the same time.
+
+## Opening Folders Automatically When a Search Matches a File Name
+To improve my current implementation, I would update the functionality to automatically open folders that contain files matching the search criteria. This improvement will likely require a change of how state is managed within these components, potentially that would mean the relocation of state outside of the [`DocumentItem`](../src/features/documents/components/documentTree.tsx) component. This would be a good feature to add during next iteration.
