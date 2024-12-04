@@ -15,12 +15,41 @@ type UseDocumentSearchProps = {
 	documents: DocumentTypeOrFolder[];
 };
 
+const searchRecursively = (items: DocumentTypeOrFolder[], searchTerm: string): DocumentTypeOrFolder[] => {
+	const result: DocumentTypeOrFolder[] = [];
+
+	if (searchTerm.length === 0) {
+		return items;
+	}
+
+	items.forEach((item) => {
+		if (isFolder(item)) {
+			const matchingFiles = searchRecursively(item.files, searchTerm);
+			if (matchingFiles.length > 0) {
+				result.push({ ...item, files: matchingFiles });
+			}
+		}
+
+		if (item.name.toLowerCase().includes(searchTerm)) {
+			return result.push(item);
+		}
+	});
+
+	return result;
+};
+
 export const useDocumentSearch = ({ defaultValue, documents }: UseDocumentSearchProps): UseDocumentSearchReturn => {
 	const [searchTerm, setSearchTerm] = useState(defaultValue || '');
+
+	const searchedDocs = useMemo(() => {
+		const searchLower = searchTerm.toLowerCase();
+
+		return searchRecursively(documents, searchLower);
+	}, [documents, searchTerm]);
 
 	return {
 		searchTerm,
 		setSearchTerm,
-		result: documents,
+		result: searchedDocs,
 	};
 };
