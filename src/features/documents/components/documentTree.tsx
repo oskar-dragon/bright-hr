@@ -3,11 +3,11 @@ import { useState } from 'react';
 import type { DocumentTypeOrFolder } from '../types';
 import { isFolder } from '../helpers/isFolder';
 
-type DocumentTreeProps = {
+export type DocumentTreeProps = {
 	documents: DocumentTypeOrFolder[];
 };
 
-const DocumentTree = ({ documents }: DocumentTreeProps) => {
+export const DocumentTree = ({ documents }: DocumentTreeProps) => {
 	return (
 		<div className="space-y-6">
 			<div className="rounded-lg bg-white p-6 shadow-lg">
@@ -90,5 +90,3 @@ const DocumentItem = ({ item }: DocumentItemProps) => {
 		</div>
 	);
 };
-
-export default DocumentTree;

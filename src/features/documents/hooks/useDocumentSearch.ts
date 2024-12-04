@@ -3,15 +3,15 @@ import { useMemo, useState } from 'react';
 import { isFolder } from '../helpers/isFolder';
 import { DocumentTypeOrFolder } from '../types';
 
-type UseDocumentSearchReturn = {
+export type UseDocumentSearchProps = {
+	defaultValue?: string;
+	documents: DocumentTypeOrFolder[];
+};
+
+export type UseDocumentSearchReturn = {
 	searchTerm: string;
 	setSearchTerm: (term: string) => void;
 	result: DocumentTypeOrFolder[];
-};
-
-type UseDocumentSearchProps = {
-	defaultValue?: string;
-	documents: DocumentTypeOrFolder[];
 };
 
 const searchRecursively = (items: DocumentTypeOrFolder[], searchTerm: string): DocumentTypeOrFolder[] => {

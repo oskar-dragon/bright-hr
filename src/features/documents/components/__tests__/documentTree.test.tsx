@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import type { DocumentTypeOrFolder } from '../../types';
 import { isFolder } from '../../helpers/isFolder';
-import DocumentTree from '../documentTree';
+import { DocumentTree } from '../documentTree';
 
 describe('component: DocumentTree', () => {
 	const mockDocuments: DocumentTypeOrFolder[] = [

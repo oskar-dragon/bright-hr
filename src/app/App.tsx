@@ -1,5 +1,5 @@
-import DocumentSearchInput from '../features/documents/components/documentSearchInput';
-import DocumentTree from '../features/documents/components/documentTree';
+import { Input } from '../components/input';
+import { DocumentTree } from '../features/documents/components/documentTree';
 import { documents } from '../features/documents/constants/mockData';
 import { useDocumentSearch } from '../features/documents/hooks/useDocumentSearch';
 
@@ -13,7 +13,13 @@ function App() {
 
 				<div className="flex flex-col gap-4">
 					<div className="flex items-center gap-4">
-						<DocumentSearchInput searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+						<Input
+							type="text"
+							placeholder="Search documents..."
+							value={searchTerm}
+							onChange={(e) => setSearchTerm(e.target.value)}
+							aria-label="Search documents"
+						/>
 					</div>
 					<DocumentTree documents={result} />
 				</div>
