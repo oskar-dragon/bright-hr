@@ -31,7 +31,7 @@ You can clone this repo by clicking the code button in the top right corner of t
 
 ### Clone on your local machine
 ```bash
-git clone https://github.com/oskar-dragon/brightHR-test.git
+git clone https://github.com/oskar-dragon/bright-hr.git
 ```
 
 ### Navigate to project directory
