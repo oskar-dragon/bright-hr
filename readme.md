@@ -36,7 +36,7 @@ git clone https://github.com/oskar-dragon/bright-hr.git
 
 ### Navigate to project directory
 ```bash
-cd brightHR-test
+cd bright-hr
 ```
 
 ### Install dependencies
