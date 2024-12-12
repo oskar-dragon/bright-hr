@@ -15,13 +15,13 @@
     "typescript:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@oskar-dragon/config": "^0.0.2",
     "clsx": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
+    "@oskartdragon/config": "^0.1.3",
     "@eslint/js": "^9.15.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
